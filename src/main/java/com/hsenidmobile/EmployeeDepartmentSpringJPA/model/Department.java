@@ -1,6 +1,7 @@
 package com.hsenidmobile.EmployeeDepartmentSpringJPA.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Department {
@@ -8,7 +9,20 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private  long id;
-    private String name;
+
+    @Enumerated(EnumType.STRING)
+    private DepartmentName name;
+
+//    @OneToMany(mappedBy = "department")
+//    private List<Employee> employees;
+//
+//    public List<Employee> getEmployees() {
+//        return employees;
+//    }
+//
+//    public void setEmployees(List<Employee> employees) {
+//        this.employees = employees;
+//    }
 
     public long getId() {
         return id;
@@ -18,11 +32,20 @@ public class Department {
         this.id = id;
     }
 
-    public String getName() {
+
+    public DepartmentName getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(DepartmentName name) {
+        this.name = name;
+    }
+
+    public Department() {
+    }
+
+    public Department(long id, DepartmentName name) {
+        this.id = id;
         this.name = name;
     }
 

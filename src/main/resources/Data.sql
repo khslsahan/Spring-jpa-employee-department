@@ -1,6 +1,5 @@
-INSERT INTO `system` (name,lastaudit)VALUES('Windows Server 2012 R2 ','2017-08-11');
-INSERT INTO `system` (name,lastaudit)VALUES('RHEL 7','2017-07-21');
-INSERT INTO `system` (name,lastaudit)VALUES('Solaris 11','2017-08-13');
+truncate department ;
+INSERT INTO department (id,name) VALUES(1,'DEV');
 
-
-INSERT INTO department (id,name) VALUES(1,'dev');
+INSERT INTO employee (id, department_id, first_name, last_name)
+VALUES (2, 1, 'Sahan', 'Lakhitha');
